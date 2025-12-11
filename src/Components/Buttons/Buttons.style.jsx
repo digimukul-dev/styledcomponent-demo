@@ -63,9 +63,15 @@ export const AnimatedLogo = styled.img`
   pointer-events: none;
   animation: ${rotate} infinite 2s linear;
 `;
-
-export const DarkButton = styled(StyledButton)`
- border:2px solid ${props => props.theme.dark.primary};
- background-color:${(props) => props.theme.dark.primary};
- color:${(props) => props.theme.dark.text};
- `;
+export const DynamicThemeButton = styled(StyledButton)`
+    border: 2px solid ${(props) => props.theme.primary};
+    background-color: ${(props) => props.theme.primary};
+    color: ${(props) => props.theme.text};
+    
+    &:hover {
+        /* Swap colors on hover to use the secondary/inverted theme colors */
+        border: 2px solid ${(props) => props.theme.text};
+        background-color: ${(props) => props.theme.text};
+        color: ${(props) => props.theme.primary};
+    }
+`;
