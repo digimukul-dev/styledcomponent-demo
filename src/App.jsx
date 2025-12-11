@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import StyledButton from './Components/Buttons/Button'
+import react from './assets/react.svg'
+import StyledButton, { FancyButton , SubmitButton } from './Components/Buttons/Button'
 import './App.css'
 
 function App() {
@@ -7,11 +8,19 @@ function App() {
 
   return (
     <>
-      <StyledButton>Styled Component</StyledButton>
+    <img src={react} className='logo' alt='logo'/>
+    <br/>
+      <StyledButton type="submit">Styled Component</StyledButton>
       <div>
         <br/>
       </div>
         <StyledButton variant='outline'>Styled Component</StyledButton>
+        <div>
+        <br/>
+      </div>
+        <FancyButton>Fancy Button</FancyButton>
+        <div><br/></div>
+        <SubmitButton>Submit</SubmitButton>
     </>
   )
 }
